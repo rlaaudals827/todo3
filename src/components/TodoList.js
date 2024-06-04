@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import CreateTask from '../modals/CreateTask'
 import Card from './Card';
+import Button from '@mui/material/Button';
 
 const TodoList = () => {
     const [modal, setModal] = useState(false);
@@ -43,13 +44,14 @@ const TodoList = () => {
         setTaskList(taskList)
         setModal(false)
     }
+    
 
 
     return (
         <>
             <div className = "header text-center">
-                <h3>Todo List</h3>
-                <button className = "btn btn-primary mt-2" onClick = {() => setModal(true)} >Create Task</button>
+                <h3><center>Todo List</center></h3>
+                <center><Button variant="contained" className = "btn btn-primary mt-2" onClick = {() => setModal(true)} >centCreate Task</Button></center>
             </div>
             <div className = "task-container">
             {taskList && taskList.map((obj , index) => <Card taskObj = {obj} index = {index} deleteTask = {deleteTask} updateListArray = {updateListArray}/> )}
